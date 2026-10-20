@@ -1,7 +1,8 @@
 # Portal dos Games
 
 Site estático do **Portal dos Games** — o catálogo de jogos que rodam direto
-no navegador. Hospedado no GitHub Pages.
+no navegador. Hospedado no GitHub Pages:
+<https://arturreidasmaquinas.github.io/PortalDosGames/>
 
 ## Páginas
 
@@ -54,13 +55,15 @@ git init
 git add .
 git commit -m "Portal dos Games"
 git branch -M main
-git remote add origin https://github.com/<usuario>/PortalDosGames.git
+git remote add origin https://github.com/ArturReiDasMaquinas/PortalDosGames.git
 git push -u origin main
 ```
 
-Depois, no repo: **Settings → Pages → Source: Deploy from a branch →
-`main` / `/ (root)`**. O site sai em
-`https://<usuario>.github.io/PortalDosGames/`.
+O workflow `.github/workflows/pages.yml` faz o deploy sozinho a cada push
+no `main` (com `enablement: true`, ele liga o Pages no repo sem precisar
+ir em Settings → Pages na mão).
+
+O site fica em <https://arturreidasmaquinas.github.io/PortalDosGames/>.
 
 O arquivo `.nojekyll` já está na raiz, para o GitHub Pages não passar o
 site pelo Jekyll.
