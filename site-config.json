@@ -17,7 +17,7 @@
 
     "flash": {
       "label": "Site de jogos Flash",
-      "description": "O portal antigo, com os jogos em Flash/HTML5.",
+      "description": "O portal antigo, com os jogos em Flash/HTML5. Aqui roda o Touhou 6 original.",
       "url": "https://arturreidasmaquinas.github.io/flasharchive/",
       "icon": "⚡",
       "tag": "Flash",
@@ -26,6 +26,6 @@
   },
 
   "social": {
-    "github": "https://github.com/YOUR-USERNAME"
+    "github": "https://github.com/ArturReiDasMaquinas"
   }
 }
