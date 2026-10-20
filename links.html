@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Links — Portal dos Games</title>
+<meta name="description" content="Links do Portal dos Games: site de jogos Flash, site do Touhou 6 em WebAssembly e projetos relacionados." />
+<meta name="theme-color" content="#0a0910" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23d01a4a'/><text y='72' x='50' text-anchor='middle' font-size='56'>🎮</text></svg>" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark">🎮</span>
+      <span>
+        <span data-config="siteName">Portal dos Games</span>
+        <span class="brand__sub">portal de jogos web</span>
+      </span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Início</a>
+      <a href="jogos.html">Jogos</a>
+      <a href="links.html" aria-current="page">Links</a>
+      <a href="sobre.html">Sobre</a>
+      <a class="nav__cta" href="jogos.html?jogo=th06">▶ Jogar Touhou 6</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Atalhos</p>
+      <h1 class="section__title" style="font-size:clamp(1.6rem,4vw,2.4rem)">Links <small>Os atalhos do portal</small></h1>
+      <p class="lead" style="margin-top:14px">
+        Estes endereços são configurados em <code>site-config.json</code>.
+        Depois de editar, é só recarregar a página — não há build nem deploy.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="linklist">
+
+        <a class="linkrow" data-config="links.th06.url" data-config-attr="href" href="#">
+          <span class="linkrow__icon">🌸</span>
+          <span class="linkrow__body">
+            <span class="linkrow__title" data-config="links.th06.label">Touhou 6 — Embodiment of Scarlet Devil</span>
+            <span class="linkrow__desc" data-config="links.th06.description">Site do TH06 em WebAssembly.</span>
+          </span>
+          <span class="linkrow__go">→</span>
+        </a>
+
+        <a class="linkrow" data-config="links.flash.url" data-config-attr="href" href="#">
+          <span class="linkrow__icon">⚡</span>
+          <span class="linkrow__body">
+            <span class="linkrow__title" data-config="links.flash.label">Site de jogos Flash</span>
+            <span class="linkrow__desc" data-config="links.flash.description">O portal antigo, com o Touhou 6 original.</span>
+          </span>
+          <span class="linkrow__go">→</span>
+        </a>
+
+        <a class="linkrow" data-config="social.github" data-config-attr="href" href="#">
+          <span class="linkrow__icon">⌨️</span>
+          <span class="linkrow__body">
+            <span class="linkrow__title">Código-fonte no GitHub</span>
+            <span class="linkrow__desc">Portal dos Games e o motor do TH06 em Rust.</span>
+          </span>
+          <span class="linkrow__go">→</span>
+        </a>
+
+      </div>
+
+      <div class="panel panel--gold" style="margin-top:26px">
+        <h2 class="card__title" style="margin-bottom:8px">Como trocar os links</h2>
+        <p class="card__text" style="margin-bottom:12px">
+          Edite o arquivo <code>site-config.json</code> na raiz do repositório
+          e troque os campos <code>links.th06.url</code> e
+          <code>links.flash.url</code>. O portal lê esse JSON no carregamento
+          e preenche todos os botões, cards e links do site. Se o JSON
+          falhar ao carregar, o site continua funcionando com os valores
+          padrão — nada quebra.
+        </p>
+        <pre style="background:#0d0c16;border:1px solid var(--border);border-radius:10px;padding:14px;overflow:auto;font-family:var(--font-mono);font-size:.82rem;color:#d8cff0;margin:0"><code>{
+  "links": {
+    "th06":  { "url": "https://seu-usuario.github.io/TH06-web/" },
+    "flash": { "url": "https://seu-site-flash.com/" }
+  }
+}</code></pre>
+      </div>
+
+      <div class="note" style="margin-top:22px">
+        <strong>Dica:</strong> no GitHub Pages, um repositório publicado em
+        <code>https://user.github.io/repo/</code> pode ter atalhos extras
+        para o mesmo código usando query strings — por exemplo
+        <code>jogos.html?jogo=th06</code> abre direto o site do Touhou 6
+        em vez de mostrar a lista.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <h4>Portal dos Games</h4>
+        <p style="color:var(--muted);font-size:.9rem;margin:0">
+          Jogos clássicos portados para a web, direto no navegador.
+        </p>
+      </div>
+      <div>
+        <h4>Navegar</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="jogos.html">Jogos</a></li>
+          <li><a href="links.html">Links</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Jogos</h4>
+        <ul>
+          <li><a href="jogos.html?jogo=th06">Touhou 6 (WASM)</a></li>
+          <li><a data-config="links.flash.url" data-config-attr="href" href="#">Site de jogos Flash</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Código</h4>
+        <ul>
+          <li><a data-config="social.github" data-config-attr="href" href="#">GitHub</a></li>
+          <li><a href="sobre.html#licenca">Licença</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© <span data-year></span> <span data-config="author">Portal dos Games</span> · projeto de fã, não oficial.</span>
+      <span>Touhou Project © ZUN / Team Shanghai Alice.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

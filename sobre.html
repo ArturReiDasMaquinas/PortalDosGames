@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sobre — Portal dos Games</title>
+<meta name="description" content="Sobre o Portal dos Games e o port do Touhou 6 para WebAssembly." />
+<meta name="theme-color" content="#0a0910" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/style.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23d01a4a'/><text y='72' x='50' text-anchor='middle' font-size='56'>🎮</text></svg>" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="index.html">
+      <span class="brand__mark">🎮</span>
+      <span>
+        <span data-config="siteName">Portal dos Games</span>
+        <span class="brand__sub">portal de jogos web</span>
+      </span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Início</a>
+      <a href="jogos.html">Jogos</a>
+      <a href="links.html">Links</a>
+      <a href="sobre.html" aria-current="page">Sobre</a>
+      <a class="nav__cta" href="jogos.html?jogo=th06">▶ Jogar Touhou 6</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Sobre</p>
+      <h1 class="section__title" style="font-size:clamp(1.6rem,4vw,2.4rem)">Portal dos Games <small>Jogos velhos, tecnologia nova</small></h1>
+      <p class="lead" style="margin-top:14px">
+        O portal nasceu de uma pergunta simples: por que um jogo de 2002 não
+        roda direto no navegador como um vídeo do YouTube? A resposta é
+        WebAssembly — e, no caso do Touhou 6, reescrever o motor inteiro em
+        Rust.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="grid grid--wide">
+
+        <div class="panel">
+          <h2 class="card__title" style="margin-bottom:10px">O port do Touhou 6</h2>
+          <p class="card__text">
+            O motor do <em>Touhou 6 ~ the Embodiment of Scarlet Devil</em> foi
+            reimplementado do zero em Rust, lendo os formatos de arquivo
+            originais do jogo (PBG3, ANM, ECL, STD, MSG) e executando os
+            scripts de padrão de tiros originais. Nada é emulado: o
+            interpretador roda as mesmas instruções que o jogo de 2002.
+          </p>
+          <p class="card__text" style="margin-bottom:0">
+            A compilação para WebAssembly usa <strong>WebGL2</strong> como
+            backend de renderização, com WebGPU quando disponível, e a
+            <strong>Web Audio API</strong> para o som. O laço do jogo roda a
+            passo fixo de 60 Hz, desacoplado do refresh do monitor.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h2 class="card__title" style="margin-bottom:10px">Seus arquivos, seu PC</h2>
+          <p class="card__text">
+            O portal <strong>não hospeda</strong> os arquivos do jogo. Na
+            página do TH06 você seleciona a pasta do seu Touhou 6 uma vez; o
+            navegador lê os bytes localmente e guarda tudo em cache
+            (IndexedDB) para as próximas visitas.
+          </p>
+          <p class="card__text" style="margin-bottom:0">
+            Nada é enviado para servidor nenhum. Se você preferir, o site
+            também tem um botão para carregar os arquivos direto de um
+            espelho configurado em <code>site-config.json</code>.
+          </p>
+        </div>
+
+        <div class="panel">
+          <h2 class="card__title" style="margin-bottom:10px">O que você precisa</h2>
+          <ul class="card__text" style="margin-bottom:0;padding-left:18px">
+            <li>Uma cópia legítima do <strong>Touhou 6 v1.02h</strong> (o patch inglês <code>th06e</code> também serve).</li>
+            <li>Um navegador moderno: Chrome, Edge, Firefox ou Safari 16+.</li>
+            <li>WebGL2 ativado (padrão em todas as versões atuais).</li>
+            <li>~400 MB de memória livre para os arquivos do jogo e o áudio.</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="panel" id="licenca" style="margin-top:22px">
+        <h2 class="card__title" style="margin-bottom:10px">Licença e créditos</h2>
+        <p class="card__text">
+          O código do motor é open source sob a licença MIT. Este portal é um
+          projeto de fã, sem vínculo com a Team Shanghai Alice.
+        </p>
+        <p class="card__text" style="margin-bottom:0">
+          <strong>Touhou Project</strong> e <em>the Embodiment of Scarlet
+          Devil</em> são © ZUN / Team Shanghai Alice. Este site não distribui
+          nenhum arquivo do jogo — ele precisa que você tenha o seu.
+        </p>
+      </div>
+
+      <div class="panel panel--gold" style="margin-top:22px">
+        <h2 class="card__title" style="margin-bottom:10px">Créditos</h2>
+        <p class="card__text" style="margin-bottom:0">
+          <strong>ZUN</strong> — pelo jogo.<br />
+          <strong>TheScreamer74</strong> — pela reimplementação em Rust
+          (<code>TheScreamer74/Touhou6</code>).<br />
+          <strong>happyhavoc / GensokokyoClub th06</strong> — pela
+          decompilação usada como referência de comportamento.<br />
+          <strong>thtk / thpatch</strong> — pela documentação dos formatos
+          de arquivo.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="site-footer__grid">
+      <div>
+        <h4>Portal dos Games</h4>
+        <p style="color:var(--muted);font-size:.9rem;margin:0">
+          Jogos clássicos portados para a web, direto no navegador.
+        </p>
+      </div>
+      <div>
+        <h4>Navegar</h4>
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="jogos.html">Jogos</a></li>
+          <li><a href="links.html">Links</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Jogos</h4>
+        <ul>
+          <li><a href="jogos.html?jogo=th06">Touhou 6 (WASM)</a></li>
+          <li><a data-config="links.flash.url" data-config-attr="href" href="#">Site de jogos Flash</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Código</h4>
+        <ul>
+          <li><a data-config="social.github" data-config-attr="href" href="#">GitHub</a></li>
+          <li><a href="sobre.html#licenca">Licença</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© <span data-year></span> <span data-config="author">Portal dos Games</span> · projeto de fã, não oficial.</span>
+      <span>Touhou Project © ZUN / Team Shanghai Alice.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

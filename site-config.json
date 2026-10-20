@@ -1,0 +1,31 @@
+{
+  "$comment": "Edite este arquivo para trocar os links do portal. O site lê este JSON no carregamento e preenche todos os elementos com atributo data-config. Se o arquivo falhar ao carregar, o site usa os valores padrão embutidos no HTML.",
+
+  "siteName": "Portal dos Games",
+  "tagline": "Jogos que merecem rodar no navegador",
+  "author": "Artur Barbosa",
+
+  "links": {
+    "th06": {
+      "label": "Touhou 6 — Embodiment of Scarlet Devil",
+      "description": "Reimplementação em Rust/WebAssembly. Roda direto no navegador, 60 fps.",
+      "url": "https://YOUR-USERNAME.github.io/TH06-web/",
+      "icon": "🌸",
+      "tag": "WASM",
+      "primary": true
+    },
+
+    "flash": {
+      "label": "Site de jogos Flash",
+      "description": "O portal antigo, com os jogos em Flash/HTML5. Aqui roda o Touhou 6 original.",
+      "url": "https://YOUR-OTHER-SITE.example.com/",
+      "icon": "⚡",
+      "tag": "Flash",
+      "primary": false
+    }
+  },
+
+  "social": {
+    "github": "https://github.com/YOUR-USERNAME"
+  }
+}
