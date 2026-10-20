@@ -9,7 +9,7 @@
     "th06": {
       "label": "Touhou 6 — Embodiment of Scarlet Devil",
       "description": "Reimplementação em Rust/WebAssembly. Roda direto no navegador, 60 fps.",
-      "url": "https://YOUR-USERNAME.github.io/TH06-web/",
+      "url": "https://arturreidasmaquinas.github.io/th06-web",
       "icon": "🌸",
       "tag": "WASM",
       "primary": true
@@ -17,8 +17,8 @@
 
     "flash": {
       "label": "Site de jogos Flash",
-      "description": "O portal antigo, com os jogos em Flash/HTML5. Aqui roda o Touhou 6 original.",
-      "url": "https://YOUR-OTHER-SITE.example.com/",
+      "description": "O portal antigo, com os jogos em Flash/HTML5.",
+      "url": "https://arturreidasmaquinas.github.io/flasharchive/",
       "icon": "⚡",
       "tag": "Flash",
       "primary": false
